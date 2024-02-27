@@ -1,0 +1,68 @@
+﻿@model Product
+@{
+    Layout = "_DashBoard";
+}
+<div class="dash-content">
+    <div class="overview">
+        <div class="title">
+            <i class="uil uil-tachometer-fast-alt"></i>
+            <span class="text">Adding Product</span>
+        </div>
+
+        <div>
+            <form asp-action="EditProduct" class="row">
+                <div class="mb-3">
+                    <label asp-for="Name" class="form-label">Product Name</label>
+                    <input type="text" asp-for="Name" value="@Model.Name" class="form-control" placeholder="" />
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Description" class="form-label">Product Description</label>
+                    <textarea type="text" asp-for="Description" class="form-control" placeholder="">@Model.Description</textarea>
+                </div>
+                <div class="mb-3 col-lg-6">
+                    <label asp-for="Quantity" class="form-label">Product Quantity</label>
+                    <input type="number" value="@Model.Quantity" asp-for="Quantity" class="form-control" placeholder="" />
+                </div>
+                <div class="mb-3 col-lg-6">
+                    <label asp-for="Price" class="form-label">Product Price</label>
+                    <input type="number" asp-for="Price" value="@Model.Price" class="form-control" placeholder="" />
+                </div>
+                <div class="mb-3 col-lg-12 d-flex align-items-center mt-4">
+                    <div class="form-check">
+                        <input class="form-check-input" value="@Model.EnableSize" type="checkbox" asp-for="EnableSize" value="" />
+                        <label class="form-check-label" asp-for="EnableSize"> Enable Product Size </label>
+                    </div>
+                </div>
+
+                <div class="mb-3 col-lg-6">
+                    <label asp-for="company.Id" class="form-label">company</label>
+                    @{
+                        if (Model.companyId == 1 ) {
+                            <select class="form-select" asp-for="companyId">
+                                <option >Select one</option>
+                                <option selected value="1">nike</option>
+                                <option value="2">adidas</option>
+                            </select>
+                        } else if ( Model.companyId == 2 ) {
+                            <select class="form-select" asp-for="companyId">
+                                <option>Select one</option>
+                                <option  value="1">nike</option>
+                                <option selected value="2">adidas</option>
+                            </select>
+                        } else {
+                            <select class="form-select" asp-for="companyId">
+                                <option selected>Select one</option>
+                                <option value="1">nike</option>
+                                <option value="2">adidas</option>
+                            </select>
+                        }
+                    }
+                </div>
+
+                <div class="col-lg-12 d-flex justify-content-center">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

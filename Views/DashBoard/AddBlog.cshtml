@@ -1,0 +1,56 @@
+﻿@model Blog
+@{
+    Layout = "_DashBoard";
+}
+<div class="dash-content">
+    <div class="overview">
+        <div class="title">
+            <i class="uil uil-tachometer-fast-alt"></i>
+            <span class="text">Adding Blog</span>
+        </div>
+
+        <div>
+            <form asp-action="AddBlog" class="row">
+                <div class="mb-3">
+                    <label for="" class="form-label">Blog Name</label>
+                    <input type="text" name="" id="" class="form-control" placeholder="" />
+                </div>
+                <div class="mb-3">
+                    <label for="" class="form-label">Blog Description</label>
+                    <textarea type="text" name="" id="" class="form-control" placeholder=""></textarea>
+                </div>
+                <div class="mb-3 col-lg-6">
+                    <label for="" class="form-label">Blog Quantity</label>
+                    <input type="number" name="" id="" class="form-control" placeholder="" />
+                </div>
+                <div class="mb-3 col-lg-6">
+                    <label for="" class="form-label">Blog Price</label>
+                    <input type="number" name="" id="" class="form-control" placeholder="" />
+                </div>
+                <div class="mb-3 col-lg-12 d-flex align-items-center mt-4">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="" />
+                        <label class="form-check-label" for=""> Enable Blog Size </label>
+                    </div>
+                </div>
+
+                <div class="mb-3 col-lg-6">
+                    <label for="" class="form-label">company</label>
+                    <select class="form-select" name="" id="">
+                        <option selected>Select one</option>
+                        <option value="">nike</option>
+                        <option value="">adidas</option>
+                    </select>
+                </div>
+
+                <div class="mb-3 col-lg-5 d-flex align-items-center mt-lg-4">
+                    <input class="form-control" type="file" id="formFile" />
+                </div>
+
+                <div class="col-lg-12 d-flex justify-content-center">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
